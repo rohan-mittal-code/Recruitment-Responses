@@ -16,10 +16,10 @@ export class AppComponent implements OnInit {
   design = [];
   constructor(private httpClient: HttpClient, private dataService: DataService) {
     this.httpClient.get("assets/responsesData.json").subscribe(data => {
-      // console.log(data);
+      console.log(data);
       var i, j;
       for (i in data) {
-        console.log(data[i]);
+        // console.log(data[i]);
         for (j in data[i].correctAnswers) {
           let c = data[i].correctAnswers[j];
           // console.log(c);

@@ -13,12 +13,10 @@ export class EceComponent implements OnInit {
   cseData = [];
     constructor(private dataService: DataService, private router: Router) {
       this.data = this.dataService.ece;
-      console.log('dataaaaaaa');
-      console.log(this.data);
       this.dataService.csesubject.subscribe(x => {
-        console.log('dataaaaaaaaaaa');
+        // console.log('dataaaaaaaaaaa');
         this.data = x;
-        console.log(this.data);
+        // console.log(this.data);
         var i, j;
         for (i in this.data) {
           // console.log(this.data[i]);
@@ -36,16 +34,16 @@ export class EceComponent implements OnInit {
             }
           }
         }
-        console.log(this.cseData);
+        // console.log(this.cseData);
         this.dataService.cse = this.cseData;
       })
      }
 
      route(param, data){
-       console.log(this.dataService.userValue);
+      //  console.log(this.dataService.userValue);
         this.dataService.userValue = data;
-        console.log(this.dataService.userValue);
-       console.log('/cse/'+param);
+        // console.log(this.dataService.userValue);
+      //  console.log('/cse/'+param);
        this.router.navigate(['/cse/'+param]);
      }
     ngOnInit(): void {

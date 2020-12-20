@@ -20,13 +20,13 @@ export class DataService {
   managementsubject = new Subject<any>();
   designsubject = new Subject<any>();
   constructor() {
-    console.log('finall');
-    console.log(this.cse);
-    console.log(this.ece);
-    console.log(this.design);
-    console.log(this.photography);
-    console.log(this.management);
-    console.log(this.editorial);
+    // console.log('finall');
+    // console.log(this.cse);
+    // console.log(this.ece);
+    // console.log(this.design);
+    // console.log(this.photography);
+    // console.log(this.management);
+    // console.log(this.editorial);
   }
   print(){
     console.log('finall');
