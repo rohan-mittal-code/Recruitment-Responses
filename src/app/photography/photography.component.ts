@@ -11,11 +11,15 @@ export class PhotographyComponent implements OnInit {
 
   data;
   cseData = [];
+  regNo: any[];
     constructor(private dataService: DataService, private router: Router) {
       this.data = this.dataService.photography;
+
       // // console.log('dataaaaaaa');
       // // console.log(this.data);
       this.dataService.csesubject.subscribe(x => {
+        this.cseData = [];
+        this.regNo = [];
         // // console.log('dataaaaaaaaaaa');
         this.data = x;
         // // console.log(this.data);
@@ -26,13 +30,18 @@ export class PhotographyComponent implements OnInit {
             let c = this.data[i].correctAnswers[j];
             // // console.log(c);
             if(this.data[i].correctAnswers[j].domain == 'photography'){
-              this.cseData.push({
-                first_name: this.data[i].first_name,
-                last_name: this.data[i].last_name,
-                email: this.data[i].username,
-                regno: this.data[i].registration,
-                correctAnswers: this.data[i].correctAnswers[j]
-              });
+              if (this.regNo.includes(this.data[i].registration)) {
+                // console.log(this.data[i].registration);
+              } else {
+                this.regNo.push(this.data[i].registration);
+                this.cseData.push({
+                  first_name: this.data[i].first_name,
+                  last_name: this.data[i].last_name,
+                  email: this.data[i].username,
+                  regno: this.data[i].registration,
+                  correctAnswers: this.data[i].correctAnswers[j]
+                });
+              }
             }
           }
         }
@@ -48,7 +57,26 @@ export class PhotographyComponent implements OnInit {
        // console.log('/cse/'+param);
        this.router.navigate(['/cse/'+param]);
      }
-    ngOnInit(): void {
+
+
+     reload(){
+      this.dataService.fetchData();
+     }
+
+
+     ngOnInit(){
+      // if(this.cse = []){
+        this.dataService.print()
+      // }
+    }
+
+
+
+    ngAfterViewInit(){
+      console.log('dikha');
+      // if(this.cse = []){
+        this.dataService.print();
+      // }
     }
 
 }

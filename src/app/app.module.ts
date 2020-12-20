@@ -11,6 +11,7 @@ import { ManagementComponent } from './management/management.component';
 import { PhotographyComponent } from './photography/photography.component';
 import { RouterModule } from '@angular/router';
 import { CseDetailsComponent } from './cse-details/cse-details.component';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +21,15 @@ import { CseDetailsComponent } from './cse-details/cse-details.component';
     EditorialComponent,
     ManagementComponent,
     PhotographyComponent,
-    CseDetailsComponent
+    CseDetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
+      {path: '', component: CseComponent},
       {path: 'cse', component: CseComponent},
       {path: 'ece', component: EceComponent},
       {path: 'photography', component: PhotographyComponent},
