@@ -1,0 +1,18 @@
+<h1 style="text-align: center;">CSE Participant Details</h1>
+<p>First Name: {{data.first_name}}</p>
+<p>Last Name: {{data.last_name}}</p>
+<p>Registration Number: {{data.regno}}</p>
+<p>Email ID: {{data.email}}</p>
+<h4>Answers</h4>
+<table>
+  <tr>
+    <th>S.No</th>
+    <th>Question</th>
+    <th>Answer</th>
+  </tr>
+  <tr *ngFor="let d of data.correctAnswers.correctAnswers, let i=index">
+    <td>{{i+1}}</td>
+    <td><pre>{{d.question}}</pre></td>
+    <td><pre>{{d.answer}}</pre></td>
+  </tr>
+</table>

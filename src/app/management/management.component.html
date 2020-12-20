@@ -1,0 +1,13 @@
+<h1 style="text-align: center;">CSE Responses</h1>
+<div>
+  <table >
+
+    <tr *ngFor="let data of cseData">
+      <td>{{data.first_name}}</td>
+      <td>{{data.last_name}}</td>
+      <td>{{data.regno}}</td>
+      <td>{{data.email}}</td>
+      <td><button><a (click)="route(data.first_name, data)">click</a></button></td>
+      </tr>
+  </table>
+</div>
