@@ -26,7 +26,6 @@ export class AppComponent implements OnInit {
 
 
   ngAfterViewInit(){
-    console.log('dikha');
     // if(this.cse = []){
       this.dataService.print();
     // }

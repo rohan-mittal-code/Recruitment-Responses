@@ -5,28 +5,39 @@ table {
   width: 100%;
 }
 
-td, th {
+td, th, tr {
   border: 1px solid #cccccc;
   text-align: left;
-  padding: 8px;
+  padding: 5px;
 }
-
+th{
+  background-color: lightcoral;
+}
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: gray;
 }
 h1{
   text-decoration: underline;
 }
 h4{
   text-align: center;
+  background-color: lightseagreen;
+  padding: 20px;
 }
 a{
   cursor: pointer;
 }
 button{
-  padding: 10px;
-  background-color: grey;
-  border-radius: 2px;
+  padding: 7px;
+  background-color: lightyellow;
+  border-radius: 7px;
+  font-size: 14px;;
   border: 1px solid black;
   cursor: pointer;
+  color: black;
+}
+
+body{
+  background-color: #213159;
+  color: white;
 }

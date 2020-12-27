@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,10 @@ import { PhotographyComponent } from './photography/photography.component';
 import { RouterModule } from '@angular/router';
 import { CseDetailsComponent } from './cse-details/cse-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from 'src/environments/environment';
+import { PanelManagementComponent } from './panel-management/panel-management.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,12 +27,16 @@ import { NavbarComponent } from './navbar/navbar.component';
     ManagementComponent,
     PhotographyComponent,
     CseDetailsComponent,
-    NavbarComponent
+    NavbarComponent,
+    PanelManagementComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     RouterModule.forRoot([
       {path: '', component: CseComponent},
       {path: 'cse', component: CseComponent},
@@ -36,7 +45,8 @@ import { NavbarComponent } from './navbar/navbar.component';
       {path: 'editorial', component: EditorialComponent},
       {path: 'management', component: ManagementComponent},
       {path: 'design', component: DesignComponent},
-      {path: 'cse/:id', component: CseDetailsComponent}
+      {path: 'cse/:id', component: CseDetailsComponent},
+      {path: 'panels', component: PanelManagementComponent}
     ])
   ],
   providers: [],

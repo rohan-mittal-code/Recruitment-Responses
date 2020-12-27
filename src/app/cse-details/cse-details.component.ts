@@ -10,9 +10,7 @@ export class CseDetailsComponent implements OnInit {
 
   data;
   constructor(private dataService: DataService) {
-    // console.log('in details');
     this.data = dataService.userValue;
-    // console.log(dataService.userValue);
    }
 
   ngOnInit(): void {

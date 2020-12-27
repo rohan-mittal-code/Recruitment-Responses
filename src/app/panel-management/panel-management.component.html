@@ -1,0 +1,17 @@
+<h1 style="text-align: center">Panel Management Portal</h1>
+<form #form="ngForm">
+  <table>
+    <tr>
+      <th>Panelists</th>
+      <th>Current Candidate</th>
+    </tr>
+    <tr class="form-group" *ngFor="let panel of panels" style="margin-bottom: 10px;">
+      <td for="form" style="font-size: 16px;">{{panel.panel}}</td>
+      <td>
+        <input type="text" style="margin-left: 20px; border: 1px; border-radius: 2px;" class="form-control"
+          name="{{panel.candidate}}" [(ngModel)]="panel.candidate" placeholder="{{panel.candidate}}" (change)="alter()" required>
+      </td>
+
+    </tr>
+  </table>
+</form>
